@@ -9,9 +9,9 @@ Detecting tiny objects is a very challenging problem since a tiny object only co
 
 ## Installation
 
-Please refer to [install.md](docs/INSTALL.md) for installation and dataset preparation.
+Please refer to [install.md](INSTALL.md) for installation and dataset preparation.
 
 
 ## Getting Started
 
-Please see [getting_started.md](docs/get_started.md) for the basic usage of MMDetection.
+Please see [getting_started.md](get_started.md) for the basic usage of MMDetection.
