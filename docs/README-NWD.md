@@ -9,9 +9,11 @@ Detecting tiny objects is a very challenging problem since a tiny object only co
 
 ## Installation
 
-Please refer to [install.md](INSTALL.md) for installation and dataset preparation.
+Please refer to [install.md](docs/INSTALL.md) for installation and dataset preparation.
 
 
 ## Getting Started
 
-Please see [getting_started.md](get_started.md) for the basic usage of MMDetection.
+Please see [getting_started.md](docs/get_started.md) for the basic usage of MMDetection.
+
+All configuration files about NWD (AI-TOD dataset) are listed in `configs/aitod`. You can train the Faster R-CNN with NWD by `bash ./tools/dist_train.sh configs/aitod/faster_rcnn_r50_aitod_rpn_nwd.py 4` for 4 GPUs. The trained model will be evaluated on the 12th epoch.

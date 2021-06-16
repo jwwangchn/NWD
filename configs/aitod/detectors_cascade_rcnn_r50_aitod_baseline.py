@@ -1,28 +1,50 @@
 _base_ = [
-    # '../_base_/models/cascade_rcnn_r50_fpn_aitod.py',
+    # '../_base_/models/cascade_rcnn_r50_fpn.py',
     '../_base_/datasets/aitod_detection.py',
     '../_base_/schedules/schedule_1x.py', 
     '../_base_/default_runtime.py'
 ]
+
 
 # model settings
 model = dict(
     type='CascadeRCNN',
     pretrained='torchvision://resnet50',
     backbone=dict(
-        type='ResNet',
+        type='DetectoRS_ResNet',
         depth=50,
         num_stages=4,
         out_indices=(0, 1, 2, 3),
         frozen_stages=1,
         norm_cfg=dict(type='BN', requires_grad=True),
+        conv_cfg=dict(type='ConvAWS'),
         norm_eval=True,
+        sac=dict(type='SAC', use_deform=True),
+        stage_with_sac=(False, True, True, True),
+        output_img=True,
         style='pytorch'),
     neck=dict(
-        type='FPN',
+        type='RFP',
         in_channels=[256, 512, 1024, 2048],
         out_channels=256,
-        num_outs=5),
+        num_outs=5,
+        rfp_steps=2,
+        aspp_out_channels=64,
+        aspp_dilations=(1, 3, 6, 1),
+        rfp_backbone=dict(
+            rfp_inplanes=256,
+            type='DetectoRS_ResNet',
+            depth=50,
+            num_stages=4,
+            out_indices=(0, 1, 2, 3),
+            frozen_stages=1,
+            norm_cfg=dict(type='BN', requires_grad=True),
+            norm_eval=True,
+            conv_cfg=dict(type='ConvAWS'),
+            sac=dict(type='SAC', use_deform=True),
+            stage_with_sac=(False, True, True, True),
+            pretrained='torchvision://resnet50',
+            style='pytorch')),
     rpn_head=dict(
         type='RPNHead',
         in_channels=256,
@@ -38,7 +60,7 @@ model = dict(
             target_stds=[1.0, 1.0, 1.0, 1.0]),
         loss_cls=dict(
             type='CrossEntropyLoss', use_sigmoid=True, loss_weight=1.0),
-        loss_bbox=dict(type='WassersteinLoss', loss_weight=10.0)),
+        loss_bbox=dict(type='SmoothL1Loss', beta=1.0 / 9.0, loss_weight=1.0)),
     roi_head=dict(
         type='CascadeRoIHead',
         num_stages=3,
@@ -110,9 +132,7 @@ model = dict(
                 min_pos_iou=0.3,
                 match_low_quality=True,
                 ignore_iof_thr=-1,
-                gpu_assign_thr=512,
-                iou_calculator=dict(type='BboxDistanceMetric'),
-                assign_metric='wasserstein'),
+                gpu_assign_thr=256),
             sampler=dict(
                 type='RandomSampler',
                 num=256,
@@ -125,7 +145,7 @@ model = dict(
         rpn_proposal=dict(
             nms_pre=3000,
             max_per_img=3000,
-            nms=dict(type='wasserstein_nms', iou_threshold=0.85),
+            nms=dict(type='nms', iou_threshold=0.7),
             min_bbox_size=0),
         rcnn=[
             dict(
@@ -136,7 +156,7 @@ model = dict(
                     min_pos_iou=0.5,
                     match_low_quality=False,
                     ignore_iof_thr=-1,
-                    gpu_assign_thr=512),
+                    gpu_assign_thr=256),
                 sampler=dict(
                     type='RandomSampler',
                     num=512,
@@ -153,7 +173,7 @@ model = dict(
                     min_pos_iou=0.6,
                     match_low_quality=False,
                     ignore_iof_thr=-1,
-                    gpu_assign_thr=512),
+                    gpu_assign_thr=256),
                 sampler=dict(
                     type='RandomSampler',
                     num=512,
@@ -170,7 +190,7 @@ model = dict(
                     min_pos_iou=0.7,
                     match_low_quality=False,
                     ignore_iof_thr=-1,
-                    gpu_assign_thr=512),
+                    gpu_assign_thr=256),
                 sampler=dict(
                     type='RandomSampler',
                     num=512,
@@ -184,7 +204,7 @@ model = dict(
         rpn=dict(
             nms_pre=3000,
             max_per_img=3000,
-            nms=dict(type='wasserstein_nms', iou_threshold=0.85),
+            nms=dict(type='nms', iou_threshold=0.7),
             min_bbox_size=0),
         rcnn=dict(
             score_thr=0.05,
@@ -194,5 +214,11 @@ model = dict(
 # optimizer
 optimizer = dict(type='SGD', lr=0.01, momentum=0.9, weight_decay=0.0001)
 # learning policy
+lr_config = dict(
+    policy='step',
+    warmup='linear',
+    warmup_iters=2000,
+    warmup_ratio=0.001,
+    step=[8, 11])
 checkpoint_config = dict(interval=4)
 evaluation = dict(interval=12, metric='bbox')
