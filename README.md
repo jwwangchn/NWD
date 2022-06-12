@@ -12,3 +12,10 @@ This is the official code for the [NWD](https://arxiv.org/abs/2110.13389). The e
   year={2021}
 }
 ```
+```
+@article{NWD_2021_arXiv,
+  title={Detecting Tiny Objects in Aerial Images: A Normalized Wasserstein Distance and A New Benchmark},
+  author={Xu, Chang and Wang, Jinwang and and Yang, Wen and Yu, Huai and Yu, Lei and Xia, Gui-Song},
+  journal={ISPRS Journal of Photogrammetry and Remote Sensing (ISPRS J P & RS)},
+  year={2022}
+}
