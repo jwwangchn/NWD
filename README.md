@@ -6,7 +6,7 @@ This is the official code for the [NWD](https://arxiv.org/abs/2110.13389). The e
 
 You can refer to MMDetection to install and run this project.
 
-[mmcv-aitod](https://github.com/jwwangchn/mmcv-aitod) needs to be installed.
+[mmcv-aitod](https://github.com/jwwangchn/mmcv-aitod) needs to be installed for replacing official mmcv.
 [cocoapi-aitod](https://github.com/jwwangchn/cocoapi-aitod) can be used to evaluate performance on AI-TOD.
 
 
