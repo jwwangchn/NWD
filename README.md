@@ -1,6 +1,14 @@
 # A Normalized Gaussian Wasserstein Distance for Tiny Object Detection
 
-We create a new Github account to release our codes since we find the repository cannot be cloned from `Anonymous Github` directly. 
+This is the official code for the [NWD](https://arxiv.org/abs/2110.13389). The expanded method is received by the ISPRS JP & RS in 2022.
 
-Please clone the codes of NWD from [NWDMetric/NWD](https://github.com/NWDMetric/NWD.git). Thanks.
 
+## Citation
+```
+@article{NWD_2021_arXiv,
+  title={A Normalized Gaussian Wasserstein Distance for Tiny Object Detection},
+  author={Wang, Jinwang and Xu, Chang and Yang, Wen and Yu, Lei},
+  journal={arXiv preprint arXiv:2110.13389},
+  year={2021}
+}
+```
