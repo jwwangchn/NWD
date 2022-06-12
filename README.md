@@ -9,6 +9,9 @@ You can refer to MMDetection to install and run this project.
 [mmcv-aitod](https://github.com/jwwangchn/mmcv-aitod) needs to be installed for replacing official mmcv.
 [cocoapi-aitod](https://github.com/jwwangchn/cocoapi-aitod) can be used to evaluate performance on AI-TOD.
 
+## Run
+
+The NWD's config files are in [configs/aitod](https://github.com/jwwangchn/NWD/tree/main/configs/aitod).
 
 ## Citation
 ```
