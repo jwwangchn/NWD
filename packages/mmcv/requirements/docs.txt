@@ -1,3 +1,0 @@
-m2r
-sphinx_markdown_tables
-torch
