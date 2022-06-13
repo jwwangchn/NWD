@@ -113,6 +113,10 @@ The basic usage is as follows (e.g. train Faster R-CNN with NWD).
 bash ./tools/dist_train.sh configs/nwd/faster_rcnn_r50_aitod_rpn_nwd.py 4
 ```
 
+## Inference
+
+The trained models will be publicly available soon.
+
 ## Citation
 ```
 @article{NWD_2021_arXiv,
