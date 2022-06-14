@@ -1,4 +1,5 @@
 """ATSS baseline
+Evaluated on AI-TOD test set.
 Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=1500 ] = 0.128
 Average Precision  (AP) @[ IoU=0.25      | area=   all | maxDets=1500 ] = -1.000
 Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1500 ] = 0.306
@@ -109,4 +110,5 @@ lr_config = dict(
     warmup_iters=2000,
     warmup_ratio=1.0 / 3,
     step=[8, 11])
+# train on 4 GPUs
 optimizer = dict(type='SGD', lr=0.0025, momentum=0.9, weight_decay=0.0001)
