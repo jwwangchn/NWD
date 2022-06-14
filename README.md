@@ -122,6 +122,15 @@ The benchmark and trained models will be publicly available soon.
 
 ## Citation
 ```BibTeX
+@inproceedings{AI-TOD_2020_ICPR,
+    title={Tiny Object Detection in Aerial Images},
+    author={Wang, Jinwang and Yang, Wen and Guo, Haowen and Zhang, Ruixiang and Xia, Gui-Song},
+    booktitle=ICPR,
+    pages={3791--3798},
+    year={2021},
+}
+```
+```BibTeX
 @article{NWD_2021_arXiv,
   title={A Normalized Gaussian Wasserstein Distance for Tiny Object Detection},
   author={Wang, Jinwang and Xu, Chang and Yang, Wen and Yu, Lei},
