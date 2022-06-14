@@ -121,7 +121,7 @@ bash ./tools/dist_train.sh configs/nwd/faster_rcnn_r50_aitod_rpn_nwd.py 4
 The benchmark and trained models will be publicly available soon.
 
 ## Citation
-```
+```BibTeX
 @article{NWD_2021_arXiv,
   title={A Normalized Gaussian Wasserstein Distance for Tiny Object Detection},
   author={Wang, Jinwang and Xu, Chang and Yang, Wen and Yu, Lei},
@@ -129,7 +129,7 @@ The benchmark and trained models will be publicly available soon.
   year={2021}
 }
 ```
-```
+```BibTeX
 @article{NWD_RKA_2022_ISPRSJ,
   title={Detecting Tiny Objects in Aerial Images: A Normalized Wasserstein Distance and A New Benchmark},
   author={Xu, Chang and Wang, Jinwang and and Yang, Wen and Yu, Huai and Yu, Lei and Xia, Gui-Song},
