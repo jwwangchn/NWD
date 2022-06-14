@@ -99,7 +99,7 @@ Please see MMDetection full tutorials [with existing dataset](docs/1_exist_data_
 
 ### Training on a single GPU
 
-The basic usage is as follows (e.g. train Faster R-CNN with NWD).
+The basic usage is as follows (e.g. train Faster R-CNN with NWD). Note that the `lr=0.01` in config file needs to be `lr=0.01/4` for training on single GPU.
 
 ```shell
 python tools/train.py configs/nwd/faster_rcnn_r50_aitod_rpn_nwd.py
@@ -115,7 +115,10 @@ bash ./tools/dist_train.sh configs/nwd/faster_rcnn_r50_aitod_rpn_nwd.py 4
 
 ## Inference
 
-The trained models will be publicly available soon.
+
+## Benchmark
+
+The benchmark and trained models will be publicly available soon.
 
 ## Citation
 ```
