@@ -130,7 +130,7 @@ The benchmark and trained models will be publicly available soon.
 }
 ```
 ```
-@article{NWD_2021_arXiv,
+@article{NWD_RKA_2022_ISPRSJ,
   title={Detecting Tiny Objects in Aerial Images: A Normalized Wasserstein Distance and A New Benchmark},
   author={Xu, Chang and Wang, Jinwang and and Yang, Wen and Yu, Huai and Yu, Lei and Xia, Gui-Song},
   journal={ISPRS Journal of Photogrammetry and Remote Sensing (ISPRS J P & RS)},
