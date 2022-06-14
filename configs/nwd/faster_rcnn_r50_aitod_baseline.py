@@ -1,6 +1,6 @@
 """
 Faster R-CNN baseline
-
+Evaluated on AI-TOD test set.
 Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=1500 ] = 0.111
 Average Precision  (AP) @[ IoU=0.25      | area=   all | maxDets=1500 ] = -1.000
 Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1500 ] = 0.263
@@ -80,7 +80,7 @@ model = dict(
 
 fp16 = dict(loss_scale=512.)
 
-# optimizer
+# optimizer, use 4 GPUs
 optimizer = dict(type='SGD', lr=0.01, momentum=0.9, weight_decay=0.0001)
 # learning policy
 checkpoint_config = dict(interval=4)
