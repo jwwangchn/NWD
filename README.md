@@ -1,6 +1,6 @@
 # A Normalized Gaussian Wasserstein Distance for Tiny Object Detection
 
-This is the official code for the [NWD](https://arxiv.org/abs/2110.13389). The expanded method is accepted by the ISPRS JP & RS in 2022.
+This is the official code for the [NWD](https://arxiv.org/abs/2110.13389). The expanded method is accepted by the [ISPRS J P & RS](https://www.sciencedirect.com/science/article/pii/S0924271622001599?dgcid=author) in 2022.
 
 ## Installation
 
