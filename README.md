@@ -12,7 +12,7 @@ This is the official code for the [NWD](https://arxiv.org/abs/2110.13389). The e
 - CUDA 10.1 or higher
 - NCCL 2
 - GCC(G++) **5.4** or higher
-- [mmcv-nwd](git@github.com:jwwangchn/mmcv-nwd.git)==**1.3.5**
+- [mmcv-nwd](https://github.com/jwwangchn/mmcv-nwd.git)==**1.3.5**
 - [cocoapi-aitod](https://github.com/jwwangchn/cocoapi-aitod)==**12.0.3**
 
 We have tested the following versions of OS and softwares:
@@ -43,7 +43,7 @@ pip install torch==1.5.0+cu101 torchvision==0.6.0+cu101 -f https://download.pyto
 
 c. Install MMCV-NWD
 
-```
+```shell
 git clone https://github.com/jwwangchn/mmcv-nwd.git
 cd mmcv-nwd
 MMCV_WITH_OPS=1 pip install -e .  # package mmcv-full will be installed after this step
@@ -51,7 +51,7 @@ cd ../
 ```
 
 d. Install COCOAPI-AITOD for Evaluating on AI-TOD dataset
-```
+```shell
 pip install "git+https://github.com/jwwangchn/cocoapi-aitod.git#subdirectory=aitodpycocotools"
 ```
 
@@ -73,7 +73,7 @@ Please refer to [AI-TOD](https://github.com/jwwangchn/AI-TOD) for AI-TOD dataset
 It is recommended to symlink the dataset root to `$NWD/data`.
 If your folder structure is different, you may need to change the corresponding paths in config files (configs/_base_/datasets/aitod_detection.py).
 
-```
+```shell
 NWD
 ├── mmdet
 ├── tools
