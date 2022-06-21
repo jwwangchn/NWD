@@ -12,7 +12,7 @@ This is the official code for the [NWD](https://arxiv.org/abs/2110.13389). The e
 - CUDA 10.1 or higher
 - NCCL 2
 - GCC(G++) **5.4** or higher
-- [mmcv-nwd](https://github.com/jwwangchn/mmcv-nwd.git)==**1.2.7**
+- [mmcv-nwd](https://github.com/jwwangchn/mmcv-nwd.git)==**1.3.5**
 - [cocoapi-aitod](https://github.com/jwwangchn/cocoapi-aitod)==**12.0.3**
 
 We have tested the following versions of OS and softwares:
